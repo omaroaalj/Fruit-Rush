@@ -13,15 +13,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2023-02-06T20:43:08.611-07:00
-  initializedAtString: 2023-02-06T11:18:14.856-07:00
+  lastUpdatedAtString: 2023-02-08T11:38:03.313-07:00
+  initializedAtString: 2023-02-08T11:02:35.826-07:00
   localBranches:
+  - name: develop
+    tracking: origin/develop
   - name: origin/upload-assets
-    tracking: 
+    tracking: origin/origin/upload-assets
   remoteBranches:
   - name: origin/HEAD
     tracking: '[None]'
+  - name: origin/develop
+    tracking: '[None]'
+  - name: origin/main
+    tracking: '[None]'
   - name: origin/omar-readme
+    tracking: '[None]'
+  - name: origin/origin/upload-assets
     tracking: '[None]'
   remotes:
   - name: origin
@@ -33,20 +41,29 @@ MonoBehaviour:
     token: 
   localConfigBranches:
     keys:
+    - develop
     - origin/upload-assets
     values:
+    - name: develop
+      remote:
+        name: origin
+        url: https://github.com/chxhana/Coin-Rush.git
+      trackingBranch: develop
     - name: origin/upload-assets
       remote:
-        name: 
-        url: 
-      trackingBranch: 
+        name: origin
+        url: https://github.com/chxhana/Coin-Rush.git
+      trackingBranch: origin/upload-assets
   remoteConfigBranches:
     keys:
     - origin
     subKeys:
     - Values:
       - HEAD
+      - develop
+      - main
       - omar-readme
+      - origin/upload-assets
     subKeyValues:
     - Values:
       - name: HEAD
@@ -54,7 +71,22 @@ MonoBehaviour:
           name: origin
           url: https://github.com/chxhana/Coin-Rush.git
         trackingBranch: 
+      - name: develop
+        remote:
+          name: origin
+          url: https://github.com/chxhana/Coin-Rush.git
+        trackingBranch: 
+      - name: main
+        remote:
+          name: origin
+          url: https://github.com/chxhana/Coin-Rush.git
+        trackingBranch: 
       - name: omar-readme
+        remote:
+          name: origin
+          url: https://github.com/chxhana/Coin-Rush.git
+        trackingBranch: 
+      - name: origin/upload-assets
         remote:
           name: origin
           url: https://github.com/chxhana/Coin-Rush.git
