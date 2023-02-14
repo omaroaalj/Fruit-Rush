@@ -13,48 +13,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2023-02-13T22:21:14.436-07:00
-  initializedAtString: 2023-02-13T22:18:49.332-07:00
+  lastUpdatedAtString: 2023-02-14T16:20:03.702-07:00
+  initializedAtString: 2023-02-14T15:28:21.322-07:00
   entries:
+  - path: Coin Rush CMPT 322/Assets/ItemCollector.cs
+    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Assets/ItemCollector.cs
+    projectPath: Assets/ItemCollector.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Coin Rush CMPT 322/Assets/Scenes/MainMenu.unity
     fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Assets/Scenes/MainMenu.unity
     projectPath: Assets/Scenes/MainMenu.unity
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Coin Rush CMPT 322/Assets/Strawberry.prefab
+    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Assets/Strawberry.prefab
+    projectPath: Assets/Strawberry.prefab
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Coin Rush CMPT 322/Assets/Strawberry.prefab.meta
+    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Assets/Strawberry.prefab.meta
+    projectPath: Assets/Strawberry.prefab.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
   - path: Coin Rush CMPT 322/Library/ArtifactDB
     fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/ArtifactDB
     projectPath: Library/ArtifactDB
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Coin Rush CMPT 322/Library/ArtifactDB-lock
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/ArtifactDB-lock
-    projectPath: Library/ArtifactDB-lock
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Coin Rush CMPT 322/Library/Artifacts/3a/3a293d4ac346332994e071b6326f4f54
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/Artifacts/3a/3a293d4ac346332994e071b6326f4f54
-    projectPath: Library/Artifacts/3a/3a293d4ac346332994e071b6326f4f54
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Coin Rush CMPT 322/Library/Artifacts/d8/d85029fd1ad84dd90b47c189e5a97ac5
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/Artifacts/d8/d85029fd1ad84dd90b47c189e5a97ac5
-    projectPath: Library/Artifacts/d8/d85029fd1ad84dd90b47c189e5a97ac5
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Coin Rush CMPT 322/Library/Artifacts/d8/d8d59053657f0d6f5f8ef1ab70ff9ee3
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/Artifacts/d8/d8d59053657f0d6f5f8ef1ab70ff9ee3
-    projectPath: Library/Artifacts/d8/d8d59053657f0d6f5f8ef1ab70ff9ee3
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Coin Rush CMPT 322/Library/Bee/200b0aE.dag_fsmtime
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/Bee/200b0aE.dag_fsmtime
-    projectPath: Library/Bee/200b0aE.dag_fsmtime
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -82,6 +70,12 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Coin Rush CMPT 322/Library/gfu/cache/branches.yaml
+    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/gfu/cache/branches.yaml
+    projectPath: Library/gfu/cache/branches.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Coin Rush CMPT 322/Library/gfu/cache/gitlocks.yaml
     fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/gfu/cache/gitlocks.yaml
     projectPath: Library/gfu/cache/gitlocks.yaml
@@ -97,18 +91,6 @@ MonoBehaviour:
   - path: Coin Rush CMPT 322/Library/gfu/cache/gittrackingstatus.yaml
     fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/gfu/cache/gittrackingstatus.yaml
     projectPath: Library/gfu/cache/gittrackingstatus.yaml
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Coin Rush CMPT 322/Library/gfu/cache/repoinfo.yaml
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/gfu/cache/repoinfo.yaml
-    projectPath: Library/gfu/cache/repoinfo.yaml
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Coin Rush CMPT 322/Library/ilpp.pid
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/ilpp.pid
-    projectPath: Library/ilpp.pid
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -130,9 +112,21 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Coin Rush CMPT 322/Library/SourceAssetDB-lock
-    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/SourceAssetDB-lock
-    projectPath: Library/SourceAssetDB-lock
+  - path: Coin Rush CMPT 322/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json
+    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json
+    projectPath: Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Coin Rush CMPT 322/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+    projectPath: Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Coin Rush CMPT 322/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+    fullPath: /Users/omar/Documents/GitHub/Coin-Rush/Coin Rush CMPT 322/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+    projectPath: UserSettings/Layouts/CurrentMaximizeLayout.dwlt
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
