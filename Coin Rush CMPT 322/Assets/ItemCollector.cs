@@ -18,5 +18,7 @@ public class ItemCollector : MonoBehaviour
             Debug.Log("Items: " + collectables);
             collectablesText.text = "Items: " + collectables;
         }
+	
+	
     }
 }
