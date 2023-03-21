@@ -66,7 +66,8 @@ public class MathKeypadInput : MonoBehaviour
                     if (tries <= 0) {
                         Time.timeScale = 1f;
                         Debug.Log("Loading menu and log...");
-                        File.WriteAllText("MathLog.txt", mathLog);
+                        string logPath = "MathLog/Game" + System.DateTime.Now.ToString("yyyMMddHHmmss") + ".txt";
+                        File.WriteAllText(logPath, mathLog);
                         mathLog = "";
                         SceneManager.LoadSceneAsync(menuUI);
                     }
