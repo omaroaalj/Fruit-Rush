@@ -11,12 +11,16 @@ public class ItemCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+	
         if (collision.gameObject.CompareTag("Collectable"))
         {
-            Destroy(collision.gameObject);
-            collectables++;
-            Debug.Log("Items: " + collectables);
-            collectablesText.text = "Items: " + collectables;
-        }
+        	Destroy(collision.gameObject);
+            	collectables++;
+            	Debug.Log("Items: " + collectables);
+            	collectablesText.text = "Items: " + collectables;
+	}
+	
+	
     }
 }

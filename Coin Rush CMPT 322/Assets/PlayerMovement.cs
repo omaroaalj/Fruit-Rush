@@ -4,36 +4,48 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	private Rigidbody2D player;
+    private Rigidbody2D player;
+    private int jumpCount = 0;
+    public int jumpCountMax = 2;
+    public float jumpForce = 7f;
+    public float moveSpeed = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
-   	player =  GetComponent<Rigidbody2D>();   
+        player = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("space")) 
-	{
-	   player.velocity = new Vector3(0, 7, 0);
-	}
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount < jumpCountMax)
+        {
+            player.velocity = new Vector2(player.velocity.x, jumpForce);
+            jumpCount++;
+        }
 
-	 if (Input.GetKey("d")) 
-	{
-	   player.velocity = new Vector3(3, 0, 0);
-	}
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            player.velocity = new Vector2(moveSpeed, player.velocity.y);
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            player.velocity = new Vector2(-moveSpeed, player.velocity.y);
+        }
 
-	 if (Input.GetKey("a")) 
-	{
-	   player.velocity = new Vector3(-3, 0, 0);
-	}
+        // Check if player is stuck when colliding with an object
+        if (Mathf.Abs(player.velocity.x) < 0.01f)
+        {
+            player.velocity = new Vector2(0.01f * Mathf.Sign(player.velocity.x), player.velocity.y);
+        }
+    }
 
-	if (Input.GetKey("w")) 
-	{
-	   player.velocity = new Vector3(0, 7, 0);
-	}
-	
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        jumpCount = 0;
+
+        transform.up = Vector3.up;
     }
 }
