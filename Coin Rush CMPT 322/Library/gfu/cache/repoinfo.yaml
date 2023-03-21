@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2023-02-14T15:28:20.414-07:00
-  initializedAtString: 2023-02-14T15:28:20.414-07:00
+  lastUpdatedAtString: 2023-03-15T10:03:52.934-06:00
+  initializedAtString: 2023-03-15T10:03:52.934-06:00
   currentGitRemote:
     name: origin
     url: https://github.com/chxhana/Coin-Rush.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: fruit-display
-    tracking: origin/fruit-display
+    name: StartPointRelease2
+    tracking: origin/StartPointRelease2
   currentConfigBranch:
-    name: fruit-display
+    name: StartPointRelease2
     remote:
       name: origin
       url: https://github.com/chxhana/Coin-Rush.git
-    trackingBranch: fruit-display
+    trackingBranch: StartPointRelease2
   currentConfigRemote:
     name: origin
     url: https://github.com/chxhana/Coin-Rush.git
