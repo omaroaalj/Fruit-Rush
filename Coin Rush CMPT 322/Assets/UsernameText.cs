@@ -11,10 +11,6 @@ public class UsernameText : MonoBehaviour
         username.text = newUsername;
     }
 
-    public string getUsername() {
-        return username.text;
-    }
-
     void Start() {
         setUsername(PlayerPrefs.GetString("user_name", "NAME NOT FOUND"));
     }
