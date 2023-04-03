@@ -64,6 +64,7 @@ public class MathKeypadInput : MonoBehaviour
                     Debug.Log("Incorrect Answer.");
                     mathLog += ("user answer: " + userAnswer + ") [Incorrect]\n");
                     if (tries <= 0) {
+                        mathLog += ("Points: " + collectables + "\n");
                         Time.timeScale = 1f;
                         Debug.Log("Loading menu and log...");
                         string currentUsername = PlayerPrefs.GetString("user_name");
