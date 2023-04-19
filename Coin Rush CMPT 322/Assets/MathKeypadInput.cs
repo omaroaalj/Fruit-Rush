@@ -19,7 +19,8 @@ public class MathKeypadInput : MonoBehaviour
     private static int randomY;
     private static int correctAnswer;
     private static string menuUI = "UIMenu";
-    private static string mathLog = "";
+    private static int mathProblemType;
+    private static string mathSign;
 
     public void setUserAnswer(int buttonInput) {
         userAnswer = buttonInput;
@@ -30,13 +31,28 @@ public class MathKeypadInput : MonoBehaviour
     }
 
     public static void setRandomNumbers() {
-        do {
-            randomX = Random.Range(1,9);
-            randomY = Random.Range(1,10);
-        } while (randomX + randomY > 9);
-        correctAnswer = randomX + randomY;
-        Debug.Log("Random numbers: " + randomX + " and " + randomY);
-        mathLog += (randomX + " + " + randomY + " (correct answer: " + correctAnswer + ", ");
+        mathProblemType = Random.Range(1,3);
+        if (mathProblemType == 1) { // addition
+            do {
+                randomX = Random.Range(1,9);
+                randomY = Random.Range(1,10);
+            } while (randomX + randomY > 9);
+            correctAnswer = randomX + randomY;
+            mathSign = " + ";
+            Debug.Log("Addition Random numbers: " + randomX + " and " + randomY);
+            CreateMathLog.writeRandomNumbers(randomX, mathSign, randomY, correctAnswer);
+        } else if (mathProblemType == 2) { // subtraction
+            do {
+                randomX = Random.Range(1,10);
+                randomY = Random.Range(1,9);
+            } while (randomX <= randomY || randomX + randomY > 9);
+            correctAnswer = randomX - randomY;
+            mathSign = " - ";
+            Debug.Log("Subtraction Random numbers: " + randomX + " and " + randomY);
+            CreateMathLog.writeRandomNumbers(randomX, mathSign, randomY, correctAnswer);
+        } else {
+            Debug.Log("Error: mathProblemType not 1 or 2!");
+        }
     }
 
     void Start() {
@@ -49,26 +65,23 @@ public class MathKeypadInput : MonoBehaviour
             if (userAnswer <= -1) {
                 mathUI.SetActive(true);
                 Time.timeScale = 0f;
-                randomNumbersText.text = randomX + " + " + randomY + " =";
+                randomNumbersText.text = randomX + mathSign + randomY + " =";
             } else {
                 Time.timeScale = 1f;
                 if (userAnswer == correctAnswer) {
-                    Debug.Log("Correct Answer!");
-                    mathLog += ("user answer: " + userAnswer + ") [Correct!]\n");
+                    CreateMathLog.logUserAnswer(userAnswer);
                     collectables++;
                     collectablesText.text = "Items: " + collectables;
                 }
                 else {
                     tries--;
                     triesText.text = "Tries: " + tries;
-                    Debug.Log("Incorrect Answer.");
-                    mathLog += ("user answer: " + userAnswer + ") [Incorrect]\n");
+                    CreateMathLog.logUserAnswer(userAnswer);
                     if (tries <= 0) {
                         Time.timeScale = 1f;
                         Debug.Log("Loading menu and log...");
-                        string logPath = "MathLog/Game" + System.DateTime.Now.ToString("yyyMMddHHmmss") + ".txt";
-                        File.WriteAllText(logPath, mathLog);
-                        mathLog = "";
+                        string currentUsername = PlayerPrefs.GetString("user_name");
+                        CreateMathLog.writeToFile(currentUsername);
                         SceneManager.LoadSceneAsync(menuUI);
                     }
                 }
