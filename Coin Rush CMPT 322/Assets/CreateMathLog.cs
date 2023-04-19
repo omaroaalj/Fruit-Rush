@@ -12,7 +12,7 @@ public class CreateMathLog : MonoBehaviour
 
     public static void writeRandomNumbers(int x, string sign, int y, int calculatedAnswer) {
         correctAnswer = calculatedAnswer;
-        mathLog += (x + " " + sign + " " + y + " (correct answer: " + correctAnswer + ", ");
+        mathLog += (x + sign + y + " (correct answer: " + correctAnswer + ", ");
         Debug.Log("Random numbers in mathLog variable.");
     }
 
