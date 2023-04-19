@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private int jumpCount = 0;
     public int jumpCountMax = 2;
     public float jumpForce = 7f;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 7f;
 
     // Start is called before the first frame update
     void Start()

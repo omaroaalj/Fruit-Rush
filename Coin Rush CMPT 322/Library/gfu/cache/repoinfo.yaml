@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2023-03-15T10:03:52.934-06:00
-  initializedAtString: 2023-03-15T10:03:52.934-06:00
+  lastUpdatedAtString: 2023-04-19T10:05:42.067-06:00
+  initializedAtString: 2023-04-19T10:05:42.067-06:00
   currentGitRemote:
     name: origin
     url: https://github.com/chxhana/Coin-Rush.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: StartPointRelease2
-    tracking: origin/StartPointRelease2
+    name: Develop-Omar-Math
+    tracking: origin/Develop-Omar-Math
   currentConfigBranch:
-    name: StartPointRelease2
+    name: Develop-Omar-Math
     remote:
       name: origin
       url: https://github.com/chxhana/Coin-Rush.git
-    trackingBranch: StartPointRelease2
+    trackingBranch: Develop-Omar-Math
   currentConfigRemote:
     name: origin
     url: https://github.com/chxhana/Coin-Rush.git

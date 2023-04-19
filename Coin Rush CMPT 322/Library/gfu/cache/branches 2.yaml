@@ -13,13 +13,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2023-02-01T10:43:37.071-07:00
-  initializedAtString: 2023-02-01T10:43:37.062-07:00
+  lastUpdatedAtString: 2023-02-14T15:51:42.924-07:00
+  initializedAtString: 2023-02-14T15:51:42.620-07:00
   localBranches:
+  - name: ErrorCheck
+    tracking: origin/ErrorCheck
+  - name: Fruit
+    tracking: origin/Fruit
+  - name: develop
+    tracking: origin/develop
+  - name: fruit-display
+    tracking: origin/fruit-display
   - name: main
     tracking: origin/main
   remoteBranches:
+  - name: origin/ErrorCheck
+    tracking: '[None]'
+  - name: origin/Fruit
+    tracking: '[None]'
   - name: origin/HEAD
+    tracking: '[None]'
+  - name: origin/develop
+    tracking: '[None]'
+  - name: origin/fruit-display
     tracking: '[None]'
   remotes:
   - name: origin
@@ -31,8 +47,32 @@ MonoBehaviour:
     token: 
   localConfigBranches:
     keys:
+    - ErrorCheck
+    - Fruit
+    - develop
+    - fruit-display
     - main
     values:
+    - name: ErrorCheck
+      remote:
+        name: origin
+        url: https://github.com/chxhana/Coin-Rush.git
+      trackingBranch: ErrorCheck
+    - name: Fruit
+      remote:
+        name: origin
+        url: https://github.com/chxhana/Coin-Rush.git
+      trackingBranch: Fruit
+    - name: develop
+      remote:
+        name: origin
+        url: https://github.com/chxhana/Coin-Rush.git
+      trackingBranch: develop
+    - name: fruit-display
+      remote:
+        name: origin
+        url: https://github.com/chxhana/Coin-Rush.git
+      trackingBranch: fruit-display
     - name: main
       remote:
         name: origin
@@ -43,10 +83,34 @@ MonoBehaviour:
     - origin
     subKeys:
     - Values:
+      - ErrorCheck
+      - Fruit
       - HEAD
+      - develop
+      - fruit-display
     subKeyValues:
     - Values:
+      - name: ErrorCheck
+        remote:
+          name: origin
+          url: https://github.com/chxhana/Coin-Rush.git
+        trackingBranch: 
+      - name: Fruit
+        remote:
+          name: origin
+          url: https://github.com/chxhana/Coin-Rush.git
+        trackingBranch: 
       - name: HEAD
+        remote:
+          name: origin
+          url: https://github.com/chxhana/Coin-Rush.git
+        trackingBranch: 
+      - name: develop
+        remote:
+          name: origin
+          url: https://github.com/chxhana/Coin-Rush.git
+        trackingBranch: 
+      - name: fruit-display
         remote:
           name: origin
           url: https://github.com/chxhana/Coin-Rush.git
