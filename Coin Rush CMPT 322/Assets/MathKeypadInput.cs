@@ -19,7 +19,6 @@ public class MathKeypadInput : MonoBehaviour
     private static int randomY;
     private static int correctAnswer;
     private static string menuUI = "UIMenu";
-    private static string mathLog = "";
 
     public void setUserAnswer(int buttonInput) {
         userAnswer = buttonInput;
@@ -36,7 +35,7 @@ public class MathKeypadInput : MonoBehaviour
         } while (randomX + randomY > 9);
         correctAnswer = randomX + randomY;
         Debug.Log("Random numbers: " + randomX + " and " + randomY);
-        mathLog += (randomX + " + " + randomY + " (correct answer: " + correctAnswer + ", ");
+        CreateMathLog.writeRandomNumbers(randomX, "+", randomY, correctAnswer);
     }
 
     void Start() {
@@ -53,25 +52,19 @@ public class MathKeypadInput : MonoBehaviour
             } else {
                 Time.timeScale = 1f;
                 if (userAnswer == correctAnswer) {
-                    Debug.Log("Correct Answer!");
-                    mathLog += ("user answer: " + userAnswer + ") [Correct!]\n");
+                    CreateMathLog.logUserAnswer(userAnswer);
                     collectables++;
                     collectablesText.text = "Items: " + collectables;
                 }
                 else {
                     tries--;
                     triesText.text = "Tries: " + tries;
-                    Debug.Log("Incorrect Answer.");
-                    mathLog += ("user answer: " + userAnswer + ") [Incorrect]\n");
+                    CreateMathLog.logUserAnswer(userAnswer);
                     if (tries <= 0) {
-                        mathLog += ("Points: " + collectables + "\n");
                         Time.timeScale = 1f;
                         Debug.Log("Loading menu and log...");
                         string currentUsername = PlayerPrefs.GetString("user_name");
-                        string logPath = "MathLog/" + currentUsername + System.DateTime.Now.ToString("yyyMMddHHmmss") + ".txt";
-                        File.WriteAllText(logPath, mathLog);
-                        Debug.Log("Log file complete!");
-                        mathLog = "";
+                        CreateMathLog.writeToFile(currentUsername);
                         SceneManager.LoadSceneAsync(menuUI);
                     }
                 }
