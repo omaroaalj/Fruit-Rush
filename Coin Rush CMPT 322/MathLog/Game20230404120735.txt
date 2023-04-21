@@ -1,0 +1,4 @@
+1 + 6 (correct answer: 7, user answer: 7) [Correct!]
+1 + 4 (correct answer: 5, user answer: 6) [Incorrect]
+6 + 3 (correct answer: 9, user answer: 1) [Incorrect]
+1 + 7 (correct answer: 8, user answer: 5) [Incorrect]
