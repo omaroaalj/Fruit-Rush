@@ -82,7 +82,7 @@ public class MathKeypadInput : MonoBehaviour
                         Debug.Log("Loading menu and log...");
                         string currentUsername = PlayerPrefs.GetString("user_name");
                         CreateMathLog.writeToFile(currentUsername);
-                        SceneManager.LoadSceneAsync(menuUI);
+                        SceneManager.LoadScene(menuUI);
                     }
                 }
                 mathUI.SetActive(false);
