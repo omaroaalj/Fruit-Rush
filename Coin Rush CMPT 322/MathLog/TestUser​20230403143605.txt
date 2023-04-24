@@ -1,8 +1,0 @@
-4 + 4 (correct answer: 8, user answer: 8) [Correct!]
-6 + 3 (correct answer: 9, user answer: 9) [Correct!]
-4 + 1 (correct answer: 5, user answer: 5) [Correct!]
-3 + 6 (correct answer: 9, user answer: 9) [Correct!]
-1 + 1 (correct answer: 2, user answer: 2) [Correct!]
-1 + 7 (correct answer: 8, user answer: 1) [Incorrect]
-4 + 5 (correct answer: 9, user answer: 1) [Incorrect]
-3 + 3 (correct answer: 6, user answer: 1) [Incorrect]

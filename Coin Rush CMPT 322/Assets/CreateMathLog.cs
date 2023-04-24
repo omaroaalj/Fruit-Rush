@@ -10,6 +10,10 @@ public class CreateMathLog : MonoBehaviour
     private static int correctAnswer;
     private static int userAnswer;
 
+    public static void writeUserName(string username) {
+        mathLog += ("Name: " + username + " (Start: " + System.DateTime.Now.ToString() + ")\n");
+    }
+
     public static void writeRandomNumbers(int x, string sign, int y, int calculatedAnswer) {
         correctAnswer = calculatedAnswer;
         mathLog += (x + sign + y + " (correct answer: " + correctAnswer + ", ");
@@ -33,6 +37,8 @@ public class CreateMathLog : MonoBehaviour
     }
 
     public static void writeToFile(string username) {
+
+        mathLog += ("End: " + System.DateTime.Now.ToString() + "\n");
         string logPath = "MathLog/" + username + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt";
         File.WriteAllText(logPath, mathLog);
         Debug.Log("Log file complete!");
