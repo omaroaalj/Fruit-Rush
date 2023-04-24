@@ -11,20 +11,22 @@ public class GameHistoryUI : MonoBehaviour
 
     public void setLogText() {
         string mathLog = "";
-        string folderPath = @"MathLog";
-        var logFiles = Directory.EnumerateFiles(folderPath);
-        foreach (string logFile in logFiles) {
-            Debug.Log("Log file: " + logFile);
-            int lastUsernameChar = logFile.Length-18;
-            StreamReader streamText = new StreamReader(logFile);
-            Debug.Log("File reading complete!");
-            string line;
-            while ((line = streamText.ReadLine()) != null) {
-                mathLog += (line + "\n");
-            }
-            mathLog += "-----\n";
+        string filePath = @"MathLog.txt";
+        var logFile = File.ReadAllLines(filePath);
+        foreach (string line in logFile) {
+            Debug.Log("Line: " + line);
+            mathLog += (line + "\n");
+            //int lastUsernameChar = logFile.Length-18;
+            //StreamReader streamText = new StreamReader(logFile);
+            //Debug.Log("File reading complete!");
+            //string line;
+            //while ((line = streamText.ReadLine()) != null) {
+            //    mathLog += (line + "\n");
+            //}
+            //mathLog += "-----\n";
         }
-        logText.text = mathLog + "\n";
+        Debug.Log("Math Log read complete.");
+        logText.text = mathLog;
     }
 
     //public static void collectLogs() {
