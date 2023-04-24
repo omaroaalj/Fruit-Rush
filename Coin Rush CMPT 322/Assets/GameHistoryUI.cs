@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class GameHistoryUI : MonoBehaviour
 {
@@ -20,8 +19,9 @@ public class GameHistoryUI : MonoBehaviour
 
     public static void createLogButtons() {
         for (int i = 0; i < 5; i++) {
-            Instantiate(buttonTemplate,container.transform).transform.Translate(new Vector3(0,moveDownValue,0));
-            moveDownValue -= 100;
+            GameObject copyButton = Instantiate(buttonTemplate,container.transform);
+            copyButton.transform.Translate(new Vector3(0,moveDownValue,0));
+            moveDownValue -= 50;
         }
     }
 
