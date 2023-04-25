@@ -39,8 +39,9 @@ public class CreateMathLog : MonoBehaviour
     public static void writeToFile(string username) {
 
         mathLog += ("End: " + System.DateTime.Now.ToString() + "\n");
-        string logPath = "MathLog/" + username + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt";
-        File.WriteAllText(logPath, mathLog);
+        mathLog += "-----\n";
+        string logPath = @"MathLog.txt";
+        File.AppendAllText(logPath, mathLog);
         Debug.Log("Log file complete!");
         mathLog = "";
     }
