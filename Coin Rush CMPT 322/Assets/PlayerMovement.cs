@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D player;
+    private bool isJumping = false;
     private int jumpCount = 0;
     public int jumpCountMax = 2;
     public float jumpForce = 7f;
-    public float moveSpeed = 7f;
-    private bool moveRight = false;
-    private bool moveLeft = false;
+    public float moveSpeed = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,58 +25,44 @@ public class PlayerMovement : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            // Check for jump touch
+            // Check touch phase
             if (touch.phase == TouchPhase.Began && jumpCount < jumpCountMax)
             {
-                player.velocity = new Vector2(player.velocity.x, jumpForce);
-                jumpCount++;
+                // Record touch position on touch began
+                if (touch.position.x > Screen.width / 2)
+                {
+                    player.velocity = new Vector2(moveSpeed, player.velocity.y);
+                    transform.localScale = new Vector3(1f, 1f, 1f); // Flip right
+                }
+                else if (touch.position.x < Screen.width / 2)
+                {
+                    player.velocity = new Vector2(-moveSpeed, player.velocity.y);
+                    transform.localScale = new Vector3(-1f, 1f, 1f); // Flip left
+                }
             }
 
-            // Check for move touch
-            if (touch.phase == TouchPhase.Moved)
+            // Check if touch is released and perform jump
+            if (touch.phase == TouchPhase.Ended)
             {
-                // Get touch delta position and move player accordingly
-                float touchDelta = touch.deltaPosition.x / Screen.width;
-                player.velocity = new Vector2(touchDelta * moveSpeed, player.velocity.y);
-
-                // Flip player sprite if moving left
-                if (touchDelta < 0f)
-                {
-                    transform.localScale = new Vector3(-1f, 1f, 1f);
-                }
-                else if (touchDelta > 0f)
-                {
-                    transform.localScale = new Vector3(1f, 1f, 1f);
-                }
+                isJumping = true;
             }
         }
 
         // Check for keyboard input
         if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount < jumpCountMax)
         {
-            player.velocity = new Vector2(player.velocity.x, jumpForce);
-            jumpCount++;
+            isJumping = true;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             player.velocity = new Vector2(moveSpeed, player.velocity.y);
-            transform.localScale = new Vector3(1f, 1f, 1f); // Set scale to normal
-            moveRight = true;
-            moveLeft = false;
+            transform.localScale = new Vector3(1f, 1f, 1f); // Flip right
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             player.velocity = new Vector2(-moveSpeed, player.velocity.y);
-            transform.localScale = new Vector3(-1f, 1f, 1f); // Flip scale
-            moveRight = false;
-            moveLeft = true;
-        }
-        else
-        {
-            player.velocity = new Vector2(0f, player.velocity.y);
-            moveRight = false;
-            moveLeft = false;
+            transform.localScale = new Vector3(-1f, 1f, 1f); // Flip left
         }
 
         // Check if player is stuck when colliding with an object
@@ -85,44 +70,19 @@ public class PlayerMovement : MonoBehaviour
         {
             player.velocity = new Vector2(0.01f * Mathf.Sign(player.velocity.x), player.velocity.y);
         }
-    }
 
-    private void FixedUpdate()
-    {
-        if (moveRight)
+        // Perform jump when isJumping is true and reset isJumping
+        if (isJumping)
         {
-            player.velocity = new Vector2(moveSpeed, player.velocity.y);
-            transform.localScale = new Vector3(1f, 1f, 1f); // Set scale to normal
-        }
-        else if (moveLeft)
-        {
-            player.velocity = new Vector2(-moveSpeed, player.velocity.y);
-            transform.localScale = new Vector3(-1f, 1f, 1f); // Flip scale
+            player.velocity = new Vector2(player.velocity.x, jumpForce);
+            jumpCount++;
+            isJumping = false;
         }
     }
 
- private void OnCollisionEnter2D(Collision2D collision)
-{
-    jumpCount = 0;
-
-    // Check if player collided with a platform
-    foreach (ContactPoint2D contact in collision.contacts)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (contact.normal.y > 0.5f)
-        {
-            return;
-        }
+        jumpCount = 0;
+        transform.up = Vector3.up;
     }
-
-    // Flip player sprite if moving left
-    if (moveLeft)
-    {
-        transform.localScale = new Vector3(1f, 1f, 1f);
-    }
-    // Flip player sprite if moving right
-    else if (moveRight)
-    {
-        transform.localScale = new Vector3(-1f, 1f, 1f);
-    }
-}
 }
