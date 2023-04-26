@@ -1,0 +1,8 @@
+Name: landon​ (Start: 4/24/2023 11:50:07 AM)
+4 - 2 (correct answer: 2, user answer: 2) [Correct!]
+1 + 5 (correct answer: 6, user answer: 6) [Correct!]
+5 - 2 (correct answer: 3, user answer: 3) [Correct!]
+6 - 1 (correct answer: 5, user answer: 4) [Incorrect]
+6 - 1 (correct answer: 5, user answer: 1) [Incorrect]
+2 + 3 (correct answer: 5, user answer: 4) [Incorrect]
+End: 4/24/2023 11:50:50 AM

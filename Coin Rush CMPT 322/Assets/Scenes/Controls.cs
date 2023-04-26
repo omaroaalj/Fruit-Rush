@@ -16,6 +16,7 @@ public class MenuControls : MonoBehaviour
     public void NewGamePlay()
     {
         SceneManager.LoadScene(newGameLevel);
+        CreateMathLog.writeUserName(PlayerPrefs.GetString("user_name"));
     }
 
    // public void LoadGameDialogYes()
