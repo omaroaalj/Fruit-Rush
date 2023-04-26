@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Keep the GameObject this script is attached to alive between scenes
-        DontDestroyOnLoad(gameObject);
+   private void Awake() {
+    GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
+    if (musicObj.Length > 1) {
+        Destroy(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    DontDestroyOnLoad(gameObject);
+   }
 }
